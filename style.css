@@ -11,3 +11,57 @@ body {
     justify-content: center;
     padding: 40px 20px;
 }
+
+.container {
+    background: #ffffff;
+    max-width: 600px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.expense-form, .filter-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+input, select, button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="text"] {
+    flex: 2;
+}
+
+input[type="number"] {
+    flex: 1;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
