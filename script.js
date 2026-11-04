@@ -67,3 +67,26 @@ function renderUI() {
     const currentTotal = tracker.calculateTotal(filteredExpenses);
     totalAmountEl.textContent = currentTotal.toFixed(2);
 }
+
+addBtn.addEventListener("click", () => {
+    const description = descInput.value.trim();
+    const amount = amountInput.value.trim();
+    const category = categoryInput.value;
+
+    if (!description || !amount || isNaN(amount) || Number(amount) <= 0) {
+        alert("Please enter a valid description and positive amount.");
+        return;
+    }
+
+    const newExpense = new Expense(description, amount, category);
+    tracker.addExpense(newExpense);
+
+    descInput.value = "";
+    amountInput.value = "";
+    renderUI();
+});
+
+function handleDelete(id) {
+    tracker.removeExpense(id);
+    renderUI();
+}
