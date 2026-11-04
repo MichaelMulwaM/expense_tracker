@@ -16,7 +16,7 @@ class ExpenseTracker {
         localStorage.setItem("expenses", JSON.stringify(this.expenses));
     }
 
-    //accept multiple expenses
+
     addExpense(...newExpenses) {
         this.expenses = [...this.expenses, ...newExpenses];
         this.saveToStorage();
@@ -26,3 +26,12 @@ class ExpenseTracker {
         this.expenses = this.expenses.filter(expense => expense.id !== id);
         this.saveToStorage();
     }
+    getExpensesByCategory(category) {
+        if (category === "All") return this.expenses;
+        return this.expenses.filter(expense => expense.category === category);
+    }
+
+    calculateTotal(expenseList = this.expenses) {
+        return expenseList.reduce((total, expense) => total + expense.amount, 0);
+    }
+}
