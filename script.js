@@ -16,7 +16,7 @@ class ExpenseTracker {
         localStorage.setItem("expenses", JSON.stringify(this.expenses));
     }
 
-    // Using the Rest operator (...) to accept multiple expenses if needed
+    //accept multiple expenses
     addExpense(...newExpenses) {
         this.expenses = [...this.expenses, ...newExpenses];
         this.saveToStorage();
